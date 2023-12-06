@@ -72,6 +72,8 @@ section {
 /* ############################# (CARD) ############################# */
 
 .cardContainer {
+  margin: 10%;
+  padding: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +93,7 @@ section {
   color: #000;
   grid-template-rows: 50% 35% 15%; /* Set the desired heights for each row */
   grid-template-columns: 1fr; /* 1 column */
-  margin: 40px 40px;
+  margin: 20px 3px;
   border-radius: 10px;
   overflow: hidden;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
@@ -100,7 +102,7 @@ section {
 
 .pokemonCardImage img {
   /* background-color: #e1e184; */
-  background: linear-gradient(#e1e184, #f9e667);
+  /* background: linear-gradient(#e1e184, #f9e667); */
   width: 100%;
   height: 100%;
 }
@@ -163,4 +165,22 @@ section {
 
 .electric {
   background: linear-gradient(#e1e184, #f9e667);
+}
+.fire {
+  background: linear-gradient(to bottom, #ffac33, #ff4040);
+}
+.grass {
+  background: linear-gradient(to bottom, #78c850, #4e8234);
+}
+.water {
+  background: linear-gradient(to bottom, #76b8d4, #2c699f);
+}
+.bug {
+  background: linear-gradient(to bottom, #c59d6f, #8b6b38);
+}
+.normal {
+  background: linear-gradient(to bottom, #c0c0c0, #e2e0e0);
+}
+.poison {
+  background: linear-gradient(to bottom, #a246ae, #e876f7);
 }
