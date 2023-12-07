@@ -55,6 +55,7 @@ fetch("./PokemonData.json")
 
 const signInForm = document.querySelector(".signInForm");
 const signUpForm = document.querySelector(".signUpForm");
+const form = document.querySelectorAll(".form");
 const overlay = document.querySelector(".overlay");
 const close = document.querySelector(".close");
 const signIn = document.querySelector(".signIn");
@@ -81,6 +82,8 @@ const closeModal = function () {
   signUpForm.classList.add("hidden");
   signInForm.classList.add("hidden");
   overlay.classList.add("hidden");
+
+  form.forEach((ele) => ele.reset());
 };
 
 const closeModalOnEsc = function (e) {

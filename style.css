@@ -21,13 +21,15 @@
 }
 
 body {
-  /* background-image: url("./Images/pic6.webp"); */
+  background-image: url("./images/bg4.jpg");
   overflow-x: hidden;
   background-color: #ffffff;
   color: #000;
   font-family: sans-serif, "Franklin Gothic Medium", "Arial Narrow", Arial,
     sans-serif;
   font-size: large;
+  background-size: 100% auto; /* Set background size to cover horizontally and maintain original size vertically */
+  /* background-repeat: no-repeat; Prevent the background image from repeating */
 }
 
 section {
@@ -127,6 +129,68 @@ a {
   }
 }
 
+/* ############################# (Intro) ############################# */
+.MainTitle {
+  width: 100%;
+  text-align: center;
+  margin: 2%;
+  overflow: hidden;
+}
+
+.MainTitle h1 {
+  text-align: center;
+  margin: 5%;
+}
+
+.introduction {
+  font-size: larger;
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.introduction .intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  opacity: 0.95;
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.introduction .intro p {
+  padding: 3%;
+}
+
+.introduction img {
+  width: 80%;
+}
+
+/* ---------------- Highlighted Fields ---------------- */
+.highlight {
+  position: relative;
+  /* z-index: 1; */
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  z-index: -1;
+  opacity: 0.8;
+  transform: scale(1.2, 1.2) skewX(-16deg);
+  background: var(--gradient-primary);
+}
+
 /* ############################# (CARD) ############################# */
 
 .cardContainer {
@@ -140,20 +204,21 @@ a {
 }
 
 .card {
-  font-size: larger;
+  font-size: 20px;
   font-style: oblique;
-  font-weight: 800;
+  font-weight: 700;
   display: block;
-  width: 260px;
+  width: 240px;
   height: 420px;
   display: grid;
-  gap: 5px;
+  /* gap: 5px; */
   color: #000;
   grid-template-rows: 50% 35% 15%; /* Set the desired heights for each row */
   grid-template-columns: 1fr; /* 1 column */
   margin: 20px 3px;
   border-radius: 10px;
   overflow: hidden;
+  cursor: pointer;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -186,6 +251,8 @@ a {
 }
 
 .pokemoneCardData {
+  padding: 5px 0;
+  background: #fff;
   width: 100%;
   align-items: center;
   text-align: center;
