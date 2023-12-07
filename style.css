@@ -17,14 +17,17 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif, Arial, Helvetica;
+  /* font-family: "Poppins", sans-serif, Arial, Helvetica; */
 }
 
 body {
   /* background-image: url("./Images/pic6.webp"); */
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #000;
+  font-family: sans-serif, "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-size: large;
 }
 
 section {
@@ -69,10 +72,65 @@ section {
   width: 100%;
 }
 
+/* ############################# (Menu Bar) ############################# */
+nav.primary-navigation {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  padding: 60px 0 0 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: arvo;
+}
+
+nav.primary-navigation ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav.primary-navigation li {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+}
+
+nav.primary-navigation li.toLeft {
+  float: left;
+}
+
+nav.primary-navigation li.toRight {
+  float: right;
+  border-left: 2px solid #3ca0e7; /* Add border only on the right side of SignUp */
+}
+
+nav.primary-navigation li.forLineBar {
+  border-right: 2px solid #3ca0e7;
+}
+
+nav.primary-navigation li a {
+  color: black;
+  /* display: block; */
+  padding: 0 15px;
+  text-decoration: none;
+}
+
+nav.primary-navigation li a:hover {
+  color: #3ca0e7;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: #3ca0e7;
+  }
+}
+
 /* ############################# (CARD) ############################# */
 
 .cardContainer {
-  margin: 10%;
+  margin: 5% 10%;
   padding: 5%;
   display: flex;
   align-items: center;
@@ -98,6 +156,10 @@ section {
   overflow: hidden;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.card:hover {
+  transform: scale(0.98);
 }
 
 .pokemonCardImage img {
@@ -183,4 +245,159 @@ section {
 }
 .poison {
   background: linear-gradient(to bottom, #a246ae, #e876f7);
+}
+
+/* ############################# (SignIn Form) ############################# */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 30px;
+  width: 450px;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+::placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.form button {
+  align-self: flex-end;
+}
+
+.flex-column > label {
+  color: #151717;
+  font-weight: 600;
+}
+
+.inputForm {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.input {
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 85%;
+  height: 100%;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.inputForm:focus-within {
+  border: 1.5px solid #2d79f3;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.flex-row > div > label {
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
+}
+
+.span {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #2d79f3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button-submit {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.button-submit:hover {
+  background-color: #252727;
+}
+
+.p {
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid #ededef;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  border: 1px solid #2d79f3;
+}
+
+/* ############################# (SignUp Form) ############################# */
+
+/* ############################# (Overlay bg) ############################# */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 70%; */
+  margin: auto;
+  background-color: white;
+  /* padding: 6rem; */
+  border-radius: 0.5rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.modal i {
+  float: right;
+  font-size: 22px;
+  padding: 10px 20px;
+  color: #928e8e;
+  font-weight: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }
