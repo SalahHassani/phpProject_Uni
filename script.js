@@ -48,3 +48,53 @@ fetch("./PokemonData.json")
     }
   })
   .catch((error) => console.error("Error reading JSON file:", error));
+
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+
+const signInForm = document.querySelector(".signInForm");
+const signUpForm = document.querySelector(".signUpForm");
+const overlay = document.querySelector(".overlay");
+const close = document.querySelector(".close");
+const signIn = document.querySelector(".signIn");
+const signUp = document.querySelector(".signUp");
+
+// ......................Functions...................
+
+const openSignInForm = function (e) {
+  e.preventDefault();
+  close.classList.remove("hidden");
+  signInForm.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const openSignUpForm = function (e) {
+  e.preventDefault();
+  close.classList.remove("hidden");
+  signUpForm.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = function () {
+  close.classList.add("hidden");
+  signUpForm.classList.add("hidden");
+  signInForm.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+const closeModalOnEsc = function (e) {
+  if (e.key === "Escape" && !close.classList.contains("hidden")) {
+    closeModal();
+  }
+};
+
+const MyEvents = function (onWhat, element, method) {
+  element.addEventListener(onWhat, method);
+};
+
+MyEvents("click", close, closeModal);
+MyEvents("click", overlay, closeModal);
+MyEvents("click", signIn, openSignInForm);
+MyEvents("click", signUp, openSignUpForm);
+MyEvents("keydown", document, closeModalOnEsc);

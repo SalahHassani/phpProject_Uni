@@ -284,6 +284,16 @@ a {
   transition: 0.2s ease-in-out;
 }
 
+.signUpForm input {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
+}
+
 .input {
   margin-left: 10px;
   border-radius: 10px;
