@@ -16,7 +16,7 @@ fetch("./PokemonData.json")
     for (let ele in data) {
       //   console.log(ele);
       let newCard = document.createElement("div");
-      let html = `      <div class="card">
+      let html = `      <div class="card" value="${ele}">
       <div class="cardRow pokemonCardImage ${data[ele].type}">
         <img
           src="${data[ele].image}"
@@ -60,6 +60,7 @@ const overlay = document.querySelector(".overlay");
 const close = document.querySelector(".close");
 const signIn = document.querySelector(".signIn");
 const signUp = document.querySelector(".signUp");
+const showCardDetails = document.querySelector(".showCardDetails");
 
 // ......................Functions...................
 
@@ -82,7 +83,7 @@ const closeModal = function () {
   signUpForm.classList.add("hidden");
   signInForm.classList.add("hidden");
   overlay.classList.add("hidden");
-
+  showCardDetails.innerHTML = "";
   form.forEach((ele) => ele.reset());
 };
 
@@ -101,3 +102,104 @@ MyEvents("click", overlay, closeModal);
 MyEvents("click", signIn, openSignInForm);
 MyEvents("click", signUp, openSignUpForm);
 MyEvents("keydown", document, closeModalOnEsc);
+
+cardContainer.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  let ele = e.target;
+
+  if (!ele.closest(".card")) return;
+
+  while (ele && !ele.classList.contains("card")) {
+    ele = ele.parentNode;
+  }
+  const key = ele.getAttribute("value");
+
+  // console.log(
+  //   ele.parentNode.parentNode,
+  //   ele.getAttribute("value"),
+  //   ele.dataset.value
+  // );
+  showCardModal(key);
+});
+
+function showCardModal(key) {
+  let cardHtml;
+  fetch("./PokemonData.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Now 'data' is an array containing the parsed JSON data
+      console.log(data, key);
+
+      cardHtml = `
+  <div class="pokemonDetails">
+  <div class="pokemonName">
+    <h1><span class="highlight"> ${data[key].name}</span></h1>
+  </div>
+  <div class="details">
+    <div class="pokemonImage col-5 ${data[key].type}">
+      <img
+        src=" ${data[key].image}"
+        alt="no Image Found"
+      />
+    </div>
+    <div class="extraDetails col-7">
+      <div class="description">
+        <h2>Description</h2>
+        <p> ${data[key].description}</p>
+      </div>
+      <div class="type">
+        <h2>Type :</h2>
+        <div>
+          <img src="./images/${data[key].type}.png" alt="" />
+          <h3> ${data[key].type}</h3>
+        </div>
+      </div>
+      <div class="status">
+        <h2>Status</h2>
+        <div>
+          <div class="health col-4">
+            <h3>Health :  ${data[key].hp}</h3>
+            <img src="./images/health.png" alt="no image found" />
+          </div>
+          <div class="defence col-4">
+            <h3>Defence :  ${data[key].defense}</h3>
+            <img src="./images/defance.png" alt="no image found" />
+          </div>
+          <div class="Attack col-4">
+            <h3>Attack :  ${data[key].attack}</h3>
+            <img src="./images/attack.png" alt="no image found" />
+          </div>
+        </div>
+      </div>
+      <div class="price"><h2>Price : </h2>
+        <img src="./images/moneyBag.png" alt="no image found" />
+        <h3> ${data[key].price} USD</h3>
+      </div>
+    </div>
+  </div>
+  <div class="trade">
+    <div id="container">
+      <p id="loginMessage">
+        To explore more details about this card or to make a purchase,
+        please sign in or sign up. We look forward to having you as part of
+        our Pokémon Trade Hub community!
+      </p>
+      <div class="SignInAndSignUp">
+        <a href="#" id="signInLink">SignIn</a>
+        <a href="#" id="signUpLink">SignUp</a>
+      </div>
+    </div>
+  </div>
+</div>
+  `;
+
+      showCardDetails.innerHTML = cardHtml;
+
+      overlay.classList.remove("hidden");
+      close.classList.remove("hidden");
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}
