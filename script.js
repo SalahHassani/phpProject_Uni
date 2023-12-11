@@ -56,6 +56,7 @@ fetch("./PokemonData.json")
 const signInForm = document.querySelector(".signInForm");
 const signUpForm = document.querySelector(".signUpForm");
 const form = document.querySelectorAll(".form");
+const body = document.querySelectorAll("body");
 const overlay = document.querySelector(".overlay");
 const close = document.querySelector(".close");
 const signIn = document.querySelector(".signIn");
@@ -66,6 +67,7 @@ const showCardDetails = document.querySelector(".showCardDetails");
 
 const openSignInForm = function (e) {
   e.preventDefault();
+  closeModal();
   close.classList.remove("hidden");
   signInForm.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -73,6 +75,7 @@ const openSignInForm = function (e) {
 
 const openSignUpForm = function (e) {
   e.preventDefault();
+  closeModal();
   close.classList.remove("hidden");
   signUpForm.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -101,6 +104,8 @@ MyEvents("click", close, closeModal);
 MyEvents("click", overlay, closeModal);
 MyEvents("click", signIn, openSignInForm);
 MyEvents("click", signUp, openSignUpForm);
+// MyEvents("click", document, openSignInForm);
+// MyEvents("click", document, openSignUpForm);
 MyEvents("keydown", document, closeModalOnEsc);
 
 cardContainer.addEventListener("click", function (e) {
@@ -186,8 +191,8 @@ function showCardModal(key) {
         our Pokémon Trade Hub community!
       </p>
       <div class="SignInAndSignUp">
-        <a href="#" id="signInLink">SignIn</a>
-        <a href="#" id="signUpLink">SignUp</a>
+        <a href="#" id="signInLink" class="signIn">Sign In</a>
+        <a href="#" id="signUpLink" class="signUp">Sign Up</a>
       </div>
     </div>
   </div>
@@ -203,3 +208,17 @@ function showCardModal(key) {
       console.error("Error fetching data:", error);
     });
 }
+
+document.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const ele = e.target;
+  if (ele.closest(".signIn")) {
+    openSignInForm(e);
+    return;
+  }
+
+  if (!ele.closest(".signIn")) return;
+
+  openSignUpForm(e);
+});
