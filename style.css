@@ -595,6 +595,128 @@ a {
   color: #28a745;
 }
 
+/*------------------------ After SignIn ------------------------*/
+.isAvailable {
+  width: 70%;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  border-radius: 1.2rem;
+  /* background: linear-gradient(rgb(30, 137, 30), rgb(0, 255, 26)); */
+  background: var(--gradient-primary);
+  /* var(--gradient-primary); */
+}
+
+.isAvailable h1 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+#container2 {
+  display: flex;
+  font-size: 24px;
+  font-weight: 300;
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#container2 .currentOnwer {
+  display: flex;
+  flex-direction: column;
+}
+
+#container2 .isOpenToTrade .offerTitle {
+  display: block;
+  margin: 14px;
+  background: var(--color-primary-darker);
+  justify-content: space-between;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  padding: 16px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+#container2 .isOpenToTrade .handleBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container2 .currentOnwer .nameAndPic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  padding: 4px 20px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+#container2 .currentOnwer .nameAndPic .profileIcon {
+  margin-right: 1em;
+}
+
+#container2 .currentOnwer div {
+  margin: 0.5em 1em;
+  text-align: justify;
+  display: flex;
+  justify-content: space-between;
+}
+
+#container2 .currentOnwer div span {
+  margin-right: auto;
+}
+
+#container2 .currentOnwer div .lastCardOnwer span,
+#container2 .currentOnwer div .rating span {
+  margin-right: 0;
+}
+
+#container2 .currentOnwer .nameAndPic .profileIcon img {
+  width: 50%;
+  background-color: #f7fbfe;
+  border-radius: 50%;
+}
+
+.btn {
+  /* display: inline-block; */
+  /* width: 90%; */
+  padding: 10px 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 20px auto;
+  padding: 15px 50px; */
+  border-radius: 7px;
+  border: none !important;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--color-primary);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.8s;
+}
+
+.btn:hover {
+  /* background: #4bbb7d; */
+  transform: translateY(-7px);
+  background: var(--gradient-primary);
+}
+
+.btnIcon i {
+  font-size: 20px;
+  margin-left: 5px;
+  color: #fff !important;
+}
+
 /* ############################# (Overlay bg) ############################# */
 .modal {
   position: fixed;
