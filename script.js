@@ -225,7 +225,7 @@ function showCardModal(key) {
   <div class="details">
     <div class="pokemonImage col-5 ${data[key].type}">
       <img
-        src=" ${data[key].image}"
+        src="${data[key].image}"
         alt="no Image Found"
       />
     </div>
@@ -273,7 +273,7 @@ function showCardModal(key) {
       <div class="nameAndPic">
         <span class="profileIcon col-4">
           <img
-            src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+            src="${data[key].image}"
             alt=""
           />
         </span>
