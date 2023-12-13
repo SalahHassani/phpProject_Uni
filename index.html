@@ -305,95 +305,125 @@
       <div class="showCardDetails"></div>
     </div>
 
-    <form action="#" method="post" id="createCardForm" class="">
-      <div class="CreateCardTitle"><h1>Create a Card</h1></div>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Name"
-        required
-      /><br />
+    <div class="hidden">
+      <form action="#" method="post" id="createCardForm" class="">
+        <div class="CreateCardTitle"><h1>Create A New Card</h1></div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Name"
+          required
+        /><br />
 
-      <input
-        type="number"
-        id="price"
-        name="price"
-        placeholder="Price (USD)"
-        required
-      /><br />
+        <input
+          type="number"
+          id="price"
+          name="price"
+          placeholder="Price (USD)"
+          required
+        /><br />
 
-      <input
-        type="number"
-        id="health"
-        name="health"
-        placeholder="Health"
-        required
-      /><br />
+        <input
+          type="number"
+          id="health"
+          name="health"
+          placeholder="Health"
+          required
+        /><br />
 
-      <input
-        type="number"
-        id="defence"
-        name="defence"
-        placeholder="Defence"
-        required
-      /><br />
+        <input
+          type="number"
+          id="defence"
+          name="defence"
+          placeholder="Defence"
+          required
+        /><br />
 
-      <input
-        type="number"
-        id="attack"
-        name="attack"
-        placeholder="Attack"
-        required
-      /><br />
-      <div class="CreateCardType"><h2>Type</h2></div>
-      <div class="radio-group CreateCardType">
-        <input type="radio" id="fire" name="type" value="fire" />
-        <label for="fire">Fire</label>
+        <input
+          type="number"
+          id="attack"
+          name="attack"
+          placeholder="Attack"
+          required
+        /><br />
+        <div class="CreateCardType"><h2>Type</h2></div>
+        <div class="radio-group CreateCardType">
+          <input type="radio" id="fire" name="type" value="fire" />
+          <label for="fire">Fire</label>
 
-        <input type="radio" id="water" name="type" value="water" />
-        <label for="water">Water</label>
+          <input type="radio" id="water" name="type" value="water" />
+          <label for="water">Water</label>
 
-        <input type="radio" id="bug" name="type" value="bug" />
-        <label for="bug">Bug</label>
+          <input type="radio" id="bug" name="type" value="bug" />
+          <label for="bug">Bug</label>
 
-        <input type="radio" id="lightning" name="type" value="lightning" />
-        <label for="lightning">Lightning</label>
+          <input type="radio" id="lightning" name="type" value="lightning" />
+          <label for="lightning">Lightning</label>
 
-        <input type="radio" id="grass" name="type" value="grass" />
-        <label for="grass">Grass</label>
+          <input type="radio" id="grass" name="type" value="grass" />
+          <label for="grass">Grass</label>
 
-        <input type="radio" id="electric" name="type" value="electric" />
-        <label for="electric">Electric</label>
+          <input type="radio" id="electric" name="type" value="electric" />
+          <label for="electric">Electric</label>
 
-        <input type="radio" id="poison" name="type" value="poison" />
-        <label for="poison">Poison</label>
+          <input type="radio" id="poison" name="type" value="poison" />
+          <label for="poison">Poison</label>
 
-        <input type="radio" id="normal" name="type" value="normal" />
-        <label for="normal">Normal</label>
-        <!-- Add more radio buttons as needed for other types -->
+          <input type="radio" id="normal" name="type" value="normal" />
+          <label for="normal">Normal</label>
+          <!-- Add more radio buttons as needed for other types -->
+        </div>
+
+        <input
+          type="text"
+          id="imageUrl"
+          name="imageUrl"
+          placeholder="Image URL"
+          required
+        /><br />
+
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="50"
+          placeholder="Description"
+          required
+        ></textarea
+        ><br />
+
+        <button type="submit">Create Card</button>
+      </form>
+    </div>
+
+    <div class="hidden">
+      <div id="profile">
+        <div class="profileBox">
+          <div class="profileDetails">
+            <div class="editImg">
+              <div class="imgBox">
+                <img src="./images/bg3.jpg" alt="" />
+              </div>
+              <div class="profileBtn">Edit Profile</div>
+            </div>
+            <div class="nameAndEmail">
+              <div><h1>Admin</h1></div>
+              <div><h4>Admin@1000gmail.com</h4></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="logoutAndSettings">
+          <div><a href="#">Logout</a></div>
+          <div><a href="#">Settings</a></div>
+        </div>
+        <div id="currentCards">
+          <div class="CardBoxTitle"><h2>My Card Cache</h2></div>
+          <div class="cardBox">***</div>
+        </div>
       </div>
-
-      <input
-        type="text"
-        id="imageUrl"
-        name="imageUrl"
-        placeholder="Image URL"
-        required
-      /><br />
-
-      <textarea
-        id="description"
-        name="description"
-        rows="4"
-        cols="50"
-        placeholder="Description"
-        required
-      ></textarea
-      ><br />
-
-      <button type="submit">Create Card</button>
-    </form>
+    </div>
 
     <!--The Blur view will come from here-->
     <div class="overlay hidden"></div>

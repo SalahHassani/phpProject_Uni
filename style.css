@@ -481,7 +481,7 @@ a {
 }
 
 .details div {
-  margin: 3%;
+  margin: 2%;
 }
 
 .pokemonImage {
@@ -506,14 +506,15 @@ a {
   text-align: center;
 }
 .extraDetails .status h2 {
-  margin-bottom: -25px;
+  margin-bottom: -20px;
+  margin-top: 30px;
 }
 .extraDetails .status div {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  margin: 10px 10px;
+  padding: 3px;
+  margin: 15px 0px;
   font-weight: 300;
   font-size: large;
 }
@@ -778,11 +779,6 @@ input[type="radio"] {
   background-color: #2980b9;
 }
 
-/* Add some spacing to the form
-form {
-  margin-top: 20px;
-} */
-
 .CreateCardType,
 .CreateCardTitle {
   display: flex;
@@ -792,6 +788,129 @@ form {
 
 .CreateCardTitle {
   margin: 20px;
+}
+
+/* ############################# (Profile) ############################# */
+
+#profile {
+  width: 50%;
+  height: 80vh;
+  margin: 50px;
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#profile .profileBox {
+  height: 25%;
+  background-color: black;
+  position: relative;
+}
+
+#profile .profileDetails {
+  position: absolute;
+  bottom: 0;
+  left: 4%; /* You can adjust left, right, or center as per your design */
+  display: flex;
+  margin-bottom: -80px;
+  color: #fff;
+}
+
+#profile .imgBox {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  overflow: hidden;
+  padding: 5px;
+  border: 2px solid rgb(214, 212, 212);
+  border-radius: 4px;
+}
+
+#profile .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#profile .editImg div {
+  margin: 10px 0;
+}
+
+#profile .editImg .profileBtn {
+  color: #000;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  padding: 10px 0;
+  border: 1px solid gray;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+#profile .profileBtn:hover {
+  background: #000000;
+  color: #fff;
+}
+
+#profile .profileDetails div {
+  margin-right: 15px;
+}
+
+#profile .nameAndEmail div {
+  margin-top: 0px;
+}
+
+#profile .nameAndEmail {
+  margin-top: 45px;
+}
+
+#logoutAndSettings {
+  /* margin-top: 10px; */
+  height: 10%;
+  width: 100%;
+  background-color: #ececec;
+  /* border: 1px solid black; */
+}
+#logoutAndSettings div {
+  height: 100%;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+#logoutAndSettings div a {
+  text-decoration: none;
+  font-size: larger;
+  color: rgb(162, 166, 170);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+#logoutAndSettings div a:hover {
+  color: rgb(188, 188, 188);
+}
+
+#currentCards {
+  height: 65%;
+  width: 100%;
+  padding-top: 15px;
+  background-color: #fff;
+}
+
+#currentCards .CardBoxtitle {
+  height: 10%;
+}
+
+#currentCards .cardBox {
+  height: 90%;
+}
+
+#currentCards div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ############################# (Overlay bg) ############################# */
